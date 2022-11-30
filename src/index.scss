@@ -154,7 +154,7 @@ header {
       font-size: 14px;
       color: #5C5C5C;
     }
-    img {
+    li {
       cursor: pointer;
     }
   }
@@ -188,6 +188,7 @@ h3, p {
 }
 
 .card {
+  margin-bottom: 40px;
   width: 220px;
   background: #FFFFFF;
   border: 1px solid #F3F3F3;
@@ -222,6 +223,15 @@ h3, p {
     border-radius: 8px;
     cursor: pointer;
   }
+  .addedButton {
+    background: linear-gradient(180deg, #89F09C 0%, #3CC755 100%);
+    width: 32px;
+    height: 32px;
+    border: 1px solid #F2F2F2;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
 
   .favorite {
     position: absolute;
