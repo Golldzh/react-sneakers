@@ -1,14 +1,14 @@
 import { useState } from "react";
 import React from "react";
 
-function Card(props) {
+function Card({imgUrl, title, price, onAdded}) {
 
   const [isAdded, setIsAdded] = useState(false);
 
   const onClickAdded = () => {
-    setIsAdded(!isAdded);
+    setIsAdded(true);
+    !isAdded && onAdded({title, price, imgUrl});
   }
-
 
 
   return (
@@ -16,14 +16,14 @@ function Card(props) {
       <div className="favorite">
         <img src="/img/unliked.svg" alt="unliked"/>
       </div>
-      <img width = {133} height = {112} src={props.imgUrl} alt="sneakers" />
-      <h5 className="mt-15">{props.title}</h5>
+      <img width = {133} height = {112} src={imgUrl} alt="sneakers" />
+      <h5 className="mt-15">{title}</h5>
       <div className="d-flex justify-between align-center">
         <div className="mt-15">
           <p>Цена:</p>
-          <b>{props.price} руб.</b>
+          <b>{price} руб.</b>
         </div>
-        <button className={isAdded ? 'addedButton' : 'addButton'} onClick={onClickAdded}>
+        <button className={isAdded ? 'addedButton' : 'addButton'} onClick = {onClickAdded}>
           <img src={isAdded ? '/img/added.png' : '/img/unadded.svg'} alt="plus"/>
         </button>
       </div>
