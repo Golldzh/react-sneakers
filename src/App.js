@@ -1,6 +1,7 @@
 import Card from './components/Card';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -10,13 +11,10 @@ function App() {
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    fetch('https://6387af4ae399d2e47306151e.mockapi.io/sneakers/items')
+    axios.get('https://6387af4ae399d2e47306151e.mockapi.io/sneakers/items')
     .then((res) => {
-      return res.json();
+      setItems(res.data);
     })
-    .then((json) => {
-      setItems(json);
-    });
   }, [])
 
   const onAddToCart = (obj) => {
